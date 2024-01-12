@@ -34,7 +34,7 @@ const Timer = () => {
     const { days, hours, minutes, seconds } = calculateTimeLeft();
 
     return (
-        <div className="w-screen h-screen bg-cover bg-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="w-screen h-screen">
             <h1 className='pt-20 text-7xl'>We have been together for</h1>
             <div className='pt-10 text-3xl font-semibold text-amber-50'>
                 <span>{days}</span> days {}
@@ -55,7 +55,7 @@ const Timer = () => {
                 <span></span>
             </div>
             
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center h-screen'>
                 <img src={hk} alt="hello kitty" />
             </div>
         </div>

@@ -3,6 +3,7 @@ import Two from './components/pageTwo'
 import Timer from './components/timer/timer'
 import Slideshow from './components/slideshow/slideshow'
 import StickyBox from "react-sticky-box";
+import TransparentBuffer from './space';
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, MoveIn, MoveOut, Sticky, ZoomIn } from "react-scroll-motion";
@@ -28,28 +29,9 @@ function App() {
     };
   }, []);
 
-  let backgroundColor;
-
-  const startColor = [161, 0, 129]; // RGB value for purple
-  const endColor = [101, 0, 161]; // RGB value for red
-
-  const colors = [];
-  const steps = 10; // Number of steps for the transition
-
-  for (let i = 0; i <= steps; i++) {
-    const r = Math.floor(startColor[0] + ((endColor[0] - startColor[0]) / steps) * i);
-    const g = Math.floor(startColor[1] + ((endColor[1] - startColor[1]) / steps) * i);
-    const b = Math.floor(startColor[2] + ((endColor[2] - startColor[2]) / steps) * i);
-    colors.push(`rgb(${r}, ${g}, ${b})`);
-  }
-
-  const colorIndex = Math.floor(scrollY / (height / steps)) % colors.length; // Calculate the index based on scrollY
-  backgroundColor = colors[colorIndex]; // Set the backgroundColor based on the index
-
-
   return (
     <>
-    <ScrollContainer style={{ backgroundColor }}>
+    <ScrollContainer className="bg-cover bg-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
 
       <ScrollPage>
         <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -500))}>
@@ -57,13 +39,17 @@ function App() {
         </Animator>
       </ScrollPage>
 
-
       <ScrollPage>
         <Animator animation={ZoomInScrollOut}>
             <span> < Two/> </span>
         </Animator>
       </ScrollPage>
 
+      <ScrollPage>
+            <span> <TransparentBuffer /> </span>
+            <span> <TransparentBuffer /> </span>
+            <span> <TransparentBuffer /> </span>
+      </ScrollPage>
 
     <ScrollPage>
       <StickyBox>
@@ -73,10 +59,21 @@ function App() {
       </StickyBox>
     </ScrollPage>
 
-      <ScrollPage>
+    <ScrollPage>
+            <span> <TransparentBuffer /> </span>
+    </ScrollPage>
+
+      <ScrollPage className='h-500'>
         <Animator animation={batch(Fade(), MoveOut(0, -200))}>
             <span> < Slideshow/> </span>
         </Animator>
+      </ScrollPage>
+
+
+      <ScrollPage>
+            <span> <TransparentBuffer /> </span>
+            <span> <TransparentBuffer /> </span>
+            <span> <TransparentBuffer /> </span>
       </ScrollPage>
 
       <ScrollPage>
