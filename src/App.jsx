@@ -2,6 +2,7 @@ import One from './components/pageOne'
 import Two from './components/pageTwo'
 import Timer from './components/timer/timer'
 import Slideshow from './components/slideshow/slideshow'
+import Flower from './components/flower/flower'
 import StickyBox from "react-sticky-box";
 import TransparentBuffer from './space';
 import useWindowSize from 'react-use/lib/useWindowSize'
@@ -66,6 +67,19 @@ function App() {
       <ScrollPage className='h-500'>
         <Animator animation={batch(Fade(), MoveOut(0, -200))}>
             <span> < Slideshow/> </span>
+        </Animator>
+      </ScrollPage>
+
+
+      <ScrollPage>
+            <span> <TransparentBuffer /> </span>
+            <span> <TransparentBuffer /> </span>
+            <span> <TransparentBuffer /> </span>
+      </ScrollPage>
+
+      <ScrollPage className='h-500'>
+        <Animator animation={batch(Fade(), MoveOut(0, -200))}>
+            <span> < Flower/> </span>
         </Animator>
       </ScrollPage>
 

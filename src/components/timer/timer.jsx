@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './timer.css'; // Import the CSS file
 import hk from './hk.gif'
+import { Fireworks } from 'fireworks-js'
 
 const Timer = () => {
     const [time, setTime] = useState(new Date('01/17/2020'));
@@ -34,9 +35,9 @@ const Timer = () => {
     const { days, hours, minutes, seconds } = calculateTimeLeft();
 
     return (
-        <div className="w-screen h-screen">
-            <h1 className='pt-20 text-7xl'>We have been together for</h1>
-            <div className='pt-10 text-3xl font-semibold text-amber-50'>
+        <div className="">
+            <h1 className='text-5xl pt-10 md:pt-20 md:text-7xl'>We have been together for</h1>
+            <div className='text-2xl pt-5 md:pt-10 md:text-3xl md:font-semibold md:text-amber-50'>
                 <span>{days}</span> days {}
                 <span>{hours}</span> hours {}
                 <span>{minutes}</span> minutes {} 
@@ -55,7 +56,7 @@ const Timer = () => {
                 <span></span>
             </div>
             
-            <div className='flex justify-center items-center h-screen'>
+            <div className='flex justify-center items-center md:h-screen'>
                 <img src={hk} alt="hello kitty" />
             </div>
         </div>

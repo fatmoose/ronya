@@ -79,7 +79,10 @@ const Photos = [
 export function Slideshow() {
     return (
         <><div className='text-7xl pb-5'>Pics of US!!!</div>
-        <PhotoAlbum layout="rows" photos={Photos} /></>
+
+        <PhotoAlbum layout="rows" photos={Photos} />
+
+        </>
     );
   }
 export default Slideshow;
